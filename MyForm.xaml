@@ -1,0 +1,98 @@
+<!--
+
+.SYNOPSIS
+   
+   XAML GUI Form.
+
+.DESCRIPTION
+
+   This XAML GUI Form was designed to create a computer information tool
+   that utulises powershell to gather information from remote computers via WinRM.
+
+.NOTES
+   
+   Version:          0.1
+   Author:           Filipe Soares
+   Github Repo:      https://github.com/MyTech78/PowerShell_GetComputerInfoGUI
+   Creation Date:    15/05/2021  
+   Purpose/Change:   Initial script development
+
+-->
+
+<!-- ===================================================[  Start Window  ]=================================================== -->
+
+<Window 
+   xmlns = "http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+   xmlns:x = "http://schemas.microsoft.com/winfx/2006/xaml" 
+   xmlns:d = "http://schemas.microsoft.com/expression/blend/2008" 
+   xmlns:local = "clr-namespace:XAMLStyle" 
+   Title="Get Computer Info" Width="400" SizeToContent="Height" Padding="10,10,10,10">
+
+<!-- ==================================================[  Controls Style  ]================================================== -->
+
+   <Window.Resources> 
+      <Style x:Key = "Bstyle" TargetType = "Button"> 
+         <Setter Property = "Height" Value = "30" /> 
+         <Setter Property = "Width" Value = "100" /> 
+         <Setter Property = "Foreground" Value = "White" />
+         <Setter Property = "Background" Value = "#696969" />  
+         <Setter Property = "FontSize" Value = "12" /> 
+         <Setter Property = "Margin" Value = "10" />
+         <Setter Property = "BorderBrush" Value = "#0F707070" />
+         <Setter Property = "Effect" Value = "{DropShadowEffect}" />
+      </Style>
+      <Style x:Key = "TBstyle" TargetType = "TextBox"> 
+         <Setter Property = "Width" Value = "150" />
+         <Setter Property = "Height" Value = "24" /> 
+         <Setter Property = "Margin" Value = "10" />
+         <Setter Property = "HorizontalAlignment" Value = "Left" /> 
+         <Setter Property = "FontSize" Value = "14" />
+         <Setter Property = "BorderBrush" Value = "#0F707070" />
+         <Setter Property = "Effect" Value = "{DropShadowEffect}" /> 
+      </Style>
+      <Style x:Key = "TBlstyle" TargetType = "TextBlock"> 
+         <Setter Property = "Margin" Value = "10" />
+         <Setter Property = "TextWrapping" Value = "Wrap" />
+         <Setter Property = "HorizontalAlignment" Value = "Left" />
+         <Setter Property = "FontWeight" Value = "Bold" />
+         <Setter Property = "Foreground" Value = "White" />
+         <Setter Property = "FontSize" Value = "14" />
+      </Style>
+   </Window.Resources>
+
+<!-- =====================================================[ Start Tabs ]===================================================== -->
+
+   <TabControl>
+
+<!-- ===================================================[  Computer Tab  ]=================================================== -->
+
+      <TabItem Header="Computer">
+         <Grid Background="#FF494949">
+
+         <StackPanel HorizontalAlignment= "Left" Margin= "20" >
+            <TextBlock Text="Hostname / IP Address" Style = "{StaticResource TBlstyle}" />
+            <TextBox Name= "TextBox1" Style = "{StaticResource TBstyle}"/>
+         </StackPanel>
+
+         <StackPanel HorizontalAlignment="Right" Margin= "20"> 
+            <Button Name= "Button1" Content="Get Services" Style = "{StaticResource Bstyle}"/>
+            <Button Name= "Button2" Content="Get Logical Disk" Style = "{StaticResource Bstyle}"/>
+            <Button Name= "Button3" Content="Get OS Info" Style = "{StaticResource Bstyle}"/>
+            <Button Name= "Button4" Content="Get Net. Info" Style = "{StaticResource Bstyle}"/>
+            <Button Name= "Button5" Content="Remote Offer" Style = "{StaticResource Bstyle}"/>
+            <Button Name= "Button6" Content="Remote Connect" Style = "{StaticResource Bstyle}"/>
+         </StackPanel> 
+
+         </Grid>
+      </TabItem>
+
+<!-- ====================================================[  Users Tab  ]===================================================== -->
+
+
+<!-- =====================================================[  End Tabs  ]===================================================== -->
+
+   </TabControl>
+
+<!-- ====================================================[  End Window  ]==================================================== -->
+
+</Window> 
